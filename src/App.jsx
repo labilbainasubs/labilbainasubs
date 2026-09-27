@@ -7,10 +7,9 @@ import laBilbainaLogo from "./assets/la-bilbaina-logo.jpg";
    just identifiers. The actual secret (the Access Token) lives only on
    the server, in Vercel's environment variables, and is used by
    /api/create-payment.js.
-   Swap to your production Application ID + Location ID (and the SDK
-   script tag in index.html) when going live with real payments. */
-const SQUARE_APPLICATION_ID = "sandbox-sq0idb-rso-aL53MQXjSb4o7iq7eA";
-const SQUARE_LOCATION_ID = "L7FTPYDESS0B5";
+   Production credentials — real customer cards are charged. */
+const SQUARE_APPLICATION_ID = "sq0idp-W0x3cj5wL8y-5ngJznBREw";
+const SQUARE_LOCATION_ID = "LMSSK4WED8H7V";
 
 /* ---------------- Brand tokens ---------------- */
 const NAVY = "#1C3D5A";
@@ -1034,15 +1033,9 @@ export default function App() {
 
               {panel === "payment" && (
                 <div className="space-y-4">
-                  <div className="lbl" style={{ fontSize: 12, color: BRASS, fontWeight: 700 }}>
-                    SANDBOX TEST MODE &mdash; no real card will be charged
-                  </div>
                   <div>
                     <label className="lbl text-xs" style={{ fontWeight: 700 }}>Card details</label>
                     <div id="sq-card-container" className="mt-1 p-2" style={{ border: `1px solid ${NAVY}55`, background: "#fff", minHeight: 56 }} />
-                    <p className="mt-2" style={{ fontSize: 12, color: "#777" }}>
-                      Test card: 4111 1111 1111 1111 &middot; any future expiry &middot; any CVV &middot; any ZIP
-                    </p>
                   </div>
                   {paymentError && (
                     <div className="p-3 text-sm" style={{ background: "#fdecea", color: TOMATO, border: `1px solid ${TOMATO}55` }}>
@@ -1059,7 +1052,7 @@ export default function App() {
                   </div>
                   <div className="disp" style={{ fontSize: 22, color: NAVY }}>Order #{orderNum}</div>
                   <p className="lbl mt-2" style={{ color: "#555" }}>
-                    Thanks{fulfillment.name ? `, ${fulfillment.name}` : ""} &mdash; your payment went through (Sandbox test mode).
+                    Thanks{fulfillment.name ? `, ${fulfillment.name}` : ""} &mdash; your payment went through.
                   </p>
                   {orderResult && (
                     <div className="mt-4 text-left p-3" style={{ background: "#fff", border: `1px solid ${NAVY}1c`, fontSize: 13 }}>
