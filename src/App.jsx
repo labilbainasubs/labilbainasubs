@@ -10,7 +10,7 @@ import laBilbainaLogo from "./assets/la-bilbaina-logo.jpg";
    Swap to your production Application ID + Location ID (and the SDK
    script tag in index.html) when going live with real payments. */
 const SQUARE_APPLICATION_ID = "sandbox-sq0idb-rso-aL53MQXjSb4o7iq7eA";
-const SQUARE_LOCATION_ID = "L7FTPYDESS0B57299";
+const SQUARE_LOCATION_ID = "L7FTPYDESS0B5";
 
 /* ---------------- Brand tokens ---------------- */
 const NAVY = "#1C3D5A";
